@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+    <head>
+        <style>
+            body{
+                background-color: wheat;
+                
+            }
+            p{
+                font-size: xx-large;
+            }
+        </style>
+    </head>
+    <body>
+    <center>    <h1>Enter a number</h1></center>
+        <center> <input id="i" type="text" ><button onclick="myfunc()">submit</button> </center>
+        
+        <center> <p id="p1"></p></center>
+        <script>
+            function myfunc(){
+                const message=document.getElementById("p1");
+                message.innerHTML="";
+                let p1 =document.getElementById("i").value;
+        try { 
+             if(p1.trim()=="")throw"empty";
+               if(isNaN(p1)) throw"not a number";
+
+            
+            p1=Number(p1);
+            if(p1>5) throw "high";
+            if (p1<5) throw"low";
+        
+        } catch  (error) {
+            message.innerHTML="the output = "+error;
+        }
+            }
+        </script>
+    </body>
+</html>
